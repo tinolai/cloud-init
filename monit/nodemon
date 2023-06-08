@@ -1,0 +1,8 @@
+check System Node
+if loadavg (1min) > 5 then exec "/usr/local/bin/nodemon.sh loadavg"
+if loadavg (5min) > 8 then exec "/usr/local/bin/nodemon.sh loadavg"
+
+if cpu usage > 75% for 5 cycles then exec "/usr/local/bin/nodemon.sh cpu"
+
+check device root with path /
+    if SPACE usage > 30% for 5 cycles then exec "/usr/local/bin/nodemon.sh space"
